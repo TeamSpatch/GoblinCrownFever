@@ -10,4 +10,4 @@ Note: if you use the desktop versions, you have to launch the game in widescreen
 
 ## Technical
 
-Unity 2D project, version 4.6
+Unity 2D project, version 5.0

@@ -23,9 +23,9 @@ public class Explosion : MonoBehaviour
         if (timer >= animationLifetime) {
             Destroy(gameObject);
         } else if (timer > effectLifetime) {
-            collider2D.enabled = false;
+            GetComponent<Collider2D>().enabled = false;
         } else if (timer >= startUpTime) {
-            collider2D.enabled = true;
+            GetComponent<Collider2D>().enabled = true;
         } else if (timer >= soundTime) {
             if (soundPlayed == false) {
                 audioSource.PlayOneShot(Resources.Load("boom") as AudioClip);

@@ -24,26 +24,26 @@ public class PlayerMovement : MonoBehaviour
             float v = Input.GetAxis("Vertical");
             Vector2 force = new Vector2(h, v);
             force.Normalize();
-            rigidbody2D.velocity = force * moveSpeed;
+            GetComponent<Rigidbody2D>().velocity = force * moveSpeed;
             ghostMaster.AddPosition(Time.fixedDeltaTime, transform.position);
         } else {
-            rigidbody2D.velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         UpdateAnimation();
 	}
 
     void UpdateAnimation()
     {
-        animator.SetFloat("Velocity", rigidbody2D.velocity.magnitude);
-        if (rigidbody2D.velocity.magnitude != 0f) {
-            if (Mathf.Abs(rigidbody2D.velocity.x) > Mathf.Abs(rigidbody2D.velocity.y)) {
-                if (rigidbody2D.velocity.x > 0) {
+        animator.SetFloat("Velocity", GetComponent<Rigidbody2D>().velocity.magnitude);
+        if (GetComponent<Rigidbody2D>().velocity.magnitude != 0f) {
+            if (Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y)) {
+                if (GetComponent<Rigidbody2D>().velocity.x > 0) {
                     animator.SetInteger("Direction", 3);
                 } else {
                     animator.SetInteger("Direction", 1);
                 }
             } else {
-                if (rigidbody2D.velocity.y > 0) {
+                if (GetComponent<Rigidbody2D>().velocity.y > 0) {
                     animator.SetInteger("Direction", 2);
                 } else {
                     animator.SetInteger("Direction", 0);
@@ -54,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Reset()
     {
-        rigidbody2D.rigidbody2D.position = new Vector2(-4.95f, -0.32f);
-        rigidbody2D.velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().GetComponent<Rigidbody2D>().position = new Vector2(-4.95f, -0.32f);
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         isGrounded = false;
         GetComponent<PlayerShoot>().isGrounded = false;
     }

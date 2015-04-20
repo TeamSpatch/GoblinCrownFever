@@ -147,7 +147,7 @@ public class LevelDirector : MonoBehaviour
         player.GetComponent<PlayerMovement>().Reset();
         player.GetComponent<PlayerShoot>().Reset();
         player.GetComponent<Player>().Reset();
-        GameObject.Find("endZone").transform.position = player.rigidbody2D.position;
+        GameObject.Find("endZone").transform.position = player.GetComponent<Rigidbody2D>().position;
         timer = levelTimer;
         GameObject.Find("turret").GetComponent<Turret>().Reset();
     }

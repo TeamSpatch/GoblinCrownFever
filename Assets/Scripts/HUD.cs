@@ -16,7 +16,7 @@ public class HUD : MonoBehaviour
     void Start()
     {
         levelDirector = GetComponent<LevelDirector>();
-        Screen.showCursor = false;
+        Cursor.visible = false;
         isPlaying = false;
     }
 
