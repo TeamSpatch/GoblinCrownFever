@@ -1,4 +1,4 @@
-# Goblin War Mess
+# Goblin Crown Fever
 
 Struggle during the "Goblin Crown Fever", get the Crown and become King Goblin!
 
